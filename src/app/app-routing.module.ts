@@ -12,6 +12,11 @@ const routes: Routes = [
     path: 'movies',
     component: MoviesComponent,
   },
+  // Always at the end, redirect to root for any other path
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({
