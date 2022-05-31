@@ -1,32 +1,29 @@
-{{ items | json }}
+<pre>{{ items | json }}</pre>
+
 <div class="slider">
-  <div class="slide">
+  <div class="slide" *ngFor="let item of items">
     <div class="slide-bg">
       <img
         class="slide-bg-image"
-        src="https://image.tmdb.org/t/p/original/A3bsT0m1um6tvcmlIGxBwx9eAxn.jpg"
+        [src]="'https://image.tmdb.org/t/p/original/' + item.backdrop_path"
         alt=""
       />
     </div>
     <div class="slide-pane">
-      <h2 class="name">The Lost City</h2>
+      <h2 class="name">{{ item.title }}</h2>
       <div class="meta">
         <div class="info">
           <span class="rating">
             <span class="app-icon">star</span
-            ><span class="rating-value">6.8</span>
+            ><span class="rating-value">{{ item.vote_average }}</span>
             <span>/10</span>
           </span>
-          <span>463 reviews</span>
-          <span>2022</span>
+          <span>{{ item.vote_count }} reviews</span>
+          <span>{{ item.release_date | date: "yyyy" }}</span>
         </div>
       </div>
       <div class="desc mt-6">
-        A reclusive romance novelist was sure nothing could be worse than
-        getting stuck on a book tour with her cover model until a kidnapping
-        attempt sweeps them both into a cutthroat jungle adventure, proving life
-        can be so much stranger, and more romantic, than any of her paperback
-        fictions.
+        {{ item.overview }}
       </div>
     </div>
   </div>

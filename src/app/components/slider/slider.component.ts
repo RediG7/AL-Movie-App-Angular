@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from '../../models/movie';
 
 @Component({
   selector: 'slider',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent implements OnInit {
-  @Input() items: any;
+  @Input() items: Movie[] = [];
 
   constructor() {}
 
