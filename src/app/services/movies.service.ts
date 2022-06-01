@@ -13,4 +13,11 @@ export class MoviesService {
       `${environment.baseUrl}/movie/${type}?api_key=${environment.api_url}`
     );
   }
+
+  getTvShows(type: string = 'popular') {
+    return this.http.get(
+      `${environment.baseUrl}/tv/${type}?api_key=${environment.api_url}`
+    );
+  }
+
 }
