@@ -8,9 +8,9 @@ export class MoviesService {
   // Instance of this anywhere in our application
   constructor(private http: HttpClient) {}
 
-  getMovies() {
+  getMovies(type: string = 'upcoming') {
     return this.http.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${environment.api_url}`
+      `${environment.baseUrl}/movie/${type}?api_key=${environment.api_url}`
     );
   }
 }
