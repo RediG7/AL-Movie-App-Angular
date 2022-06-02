@@ -17,20 +17,20 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // returns Observable at getMovies()
-    this.moviesService.getMovies('popular').subscribe((response) => {
-      this.popularMovies = response.results
+    this.moviesService.getMovies('popular').subscribe((movies) => {
+      this.popularMovies = movies;
     });
 
-    this.moviesService.getMovies('upcoming').subscribe((response) => {
-      this.upcomingMovies = response.results;
+    this.moviesService.getMovies('upcoming').subscribe((movies) => {
+      this.upcomingMovies = movies;
     });
 
-    this.moviesService.getMovies('top_rated').subscribe((response) => {
-      this.topRatedMovies = response.results;
+    this.moviesService.getMovies('top_rated').subscribe((movies) => {
+      this.topRatedMovies = movies;
     });
 
-    this.moviesService.getTvShows().subscribe((res) => {
-      this.popularTvShows = res.results;
+    this.moviesService.getTvShows().subscribe((tvshows) => {
+      this.popularTvShows = tvshows;
     });
   }
 }
