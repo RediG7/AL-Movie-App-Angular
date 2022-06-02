@@ -16,6 +16,7 @@ import { ItemComponent } from './components/item/item.component';
 
 import { PaginatorModule } from 'primeng/paginator';
 import { MovieComponent } from './pages/movie/movie.component';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MovieComponent } from './pages/movie/movie.component';
     AppRoutingModule,
     HttpClientModule,
     PaginatorModule,
+    TabViewModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
