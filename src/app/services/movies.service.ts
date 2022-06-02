@@ -23,6 +23,19 @@ export class MoviesService {
       );
   }
 
+  searchMovies(page: number = 1) {
+    // expected type <MovieDto></MovieDto>
+    return this.http
+      .get<MovieDto>(
+        `${environment.baseUrl}/movie/popular?page=${page}&api_key=${environment.api_url}`
+      )
+      .pipe(
+        switchMap((res) => {
+          return of(res.results);
+        })
+      );
+  }
+
   getTvShows(type: string = 'popular', count: number = 12) {
     return this.http
       .get<MovieDto>(
