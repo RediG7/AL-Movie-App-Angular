@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api_url: '9330ab2217e326d5c4983d0c6d5c7302',
+  api_url: '1d6e60e65d090d970a3ffbc6e8d3d3c1',
+  baseUrl: 'https://api.themoviedb.org/3',
 };
 
 /*
