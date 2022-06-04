@@ -15,3 +15,25 @@
     }
   }
 }
+
+.poster {
+  max-width: 100%;
+}
+
+.overview {
+  list-style: 1.5;
+}
+
+.stat {
+  display: flex;
+  margin-bottom: 15px;
+
+  .label {
+    width: 150px;
+    font-weight: bold;
+  }
+
+  .value {
+    color: $primaryColor;
+  }
+}
