@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Movie, MovieDto, MovieVideoDto } from '../models/movie';
+import { Movie, MovieDto, MovieImages, MovieVideoDto } from '../models/movie';
 import { of, switchMap } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -39,6 +39,12 @@ export class MoviesService {
           return of(res.results);
         })
       );
+  }
+
+  getMovieImages(id: string) {
+    return this.http.get<MovieImages>(
+      `${environment.baseUrl}/movie/${id}/images?api_key=${environment.api_url}`
+    );
   }
 
   searchMovies(page: number = 1) {

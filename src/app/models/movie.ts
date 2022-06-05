@@ -40,3 +40,10 @@ export interface MovieVideo {
   site: string;
   key: string;
 }
+// Different way of defining a model.
+export interface MovieImages {
+  // Array of backdrops that contains the file_path
+  backdrops: {
+    file_path: string;
+  }[];
+}
