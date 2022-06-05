@@ -9,6 +9,7 @@ import {
   MovieVideoDto,
 } from '../models/movie';
 import { of, switchMap } from 'rxjs';
+import { GenresDto } from '../models/genre';
 @Injectable({
   providedIn: 'root',
 })
@@ -43,6 +44,18 @@ export class MoviesService {
       .pipe(
         switchMap((res) => {
           return of(res.results);
+        })
+      );
+  }
+
+  getMoviesGenres() {
+    return this.http
+      .get<GenresDto>(
+        `${environment.baseUrl}/genre/movie/list?api_key=${environment.api_url}`
+      )
+      .pipe(
+        switchMap((res) => {
+          return of(res.genres);
         })
       );
   }
