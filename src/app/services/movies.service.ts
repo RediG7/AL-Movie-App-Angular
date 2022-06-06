@@ -60,6 +60,19 @@ export class MoviesService {
       );
   }
 
+  getMoviesByGenreId(genreId: string, pageNumber: number) {
+    // expected type <MovieDto></MovieDto>
+    return this.http
+      .get<MovieDto>(
+        `${environment.baseUrl}/discover/movie/?with_genres=${genreId}&page=${pageNumber}&api_key=${environment.api_url}`
+      )
+      .pipe(
+        switchMap((res) => {
+          return of(res.results);
+        })
+      );
+  }
+
   getMovieImages(id: string) {
     return this.http.get<MovieImages>(
       `${environment.baseUrl}/movie/${id}/images?api_key=${environment.api_url}`
@@ -72,7 +85,7 @@ export class MoviesService {
     );
   }
 
-  searchMovies(page: number = 1) {
+  searchMovies(page: number) {
     // expected type <MovieDto></MovieDto>
     return this.http
       .get<MovieDto>(
