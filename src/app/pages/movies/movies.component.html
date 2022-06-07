@@ -4,9 +4,16 @@
       <div class="p-fluid">
         <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
-          <input type="text" pInputText placeholder="Search" />
+          <input
+            type="text"
+            pInputText
+            placeholder="Search"
+            [(ngModel)]="searchValue"
+            (keyup)="searchChange()"
+          />
         </span>
       </div>
+      <!-- The two way binding <div>{{ searchValue }}</div> -->
     </div>
   </div>
   <div class="grid">
