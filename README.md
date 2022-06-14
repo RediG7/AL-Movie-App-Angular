@@ -3,7 +3,7 @@
 </p>
 <h1 align="center"> Al Movie Info </h1>
 <h3 align="center"> Information About Your Favourite Movies & Tv Shows </h3>
-<h5 align="center"> Learning Angular - Project 1 - <a href="https://al-movie-info.netlify.app/movies">Al Movie Info</a> (Summer 2022) </h5>
+<h5 align="center"> Learning Angular - Project 1 - <a href="https://al-movie-info.netlify.app">Al Movie Info</a> (Summer 2022) </h5>
 
 <!-- TABLE OF CONTENTS -->
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
